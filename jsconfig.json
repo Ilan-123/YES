@@ -1,0 +1,80 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/mongo": [
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/local_collection_driver.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/collection.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/connection_options.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/doc_fetcher.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/mongo_driver.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/mongo_utils.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/observe_multiplex.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/oplog_observe_driver.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/oplog_tailing.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/oplog_v2_converter.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/polling_observe_driver.js",
+        "/home/ilan/.meteor/packages/mongo/2.0.0/web.browser/remote_collection_driver.js"
+      ],
+      "meteor/jquery": [
+        "/home/ilan/.meteor/packages/jquery/3.0.0/web.browser/main.js"
+      ],
+      "meteor/reactive-var": [
+        "/home/ilan/.meteor/packages/reactive-var/1.0.13/web.browser/reactive-var.js"
+      ],
+      "meteor/tracker": [
+        "/home/ilan/.meteor/packages/tracker/1.3.4/web.browser/tracker.js"
+      ],
+      "meteor/es5-shim": [
+        "/home/ilan/.meteor/packages/es5-shim/4.8.1/web.browser/client.js",
+        "/home/ilan/.meteor/packages/es5-shim/4.8.1/web.browser/console.js",
+        "/home/ilan/.meteor/packages/es5-shim/4.8.1/web.browser/cordova.js",
+        "/home/ilan/.meteor/packages/es5-shim/4.8.1/web.browser/export_globals.js",
+        "/home/ilan/.meteor/packages/es5-shim/4.8.1/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/home/ilan/.meteor/packages/ecmascript/0.16.9/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/home/ilan/.meteor/packages/shell-server/0.6.0/web.browser/main.js",
+        "/home/ilan/.meteor/packages/shell-server/0.6.0/web.browser/shell-server.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/home/ilan/.meteor/packages/hot-module-replacement/0.5.4/web.browser/hot-api.js",
+        "/home/ilan/.meteor/packages/hot-module-replacement/0.5.4/web.browser/client.js",
+        "/home/ilan/.meteor/packages/hot-module-replacement/0.5.4/web.browser/server.js"
+      ],
+      "meteor/blaze-hot": [
+        "/home/ilan/.meteor/packages/blaze-hot/2.0.0-rc300.2/web.browser/hot.js",
+        "/home/ilan/.meteor/packages/blaze-hot/2.0.0-rc300.2/web.browser/update-templates.js"
+      ],
+      "meteor/dev-error-overlay": [
+        "/home/ilan/.meteor/packages/dev-error-overlay/0.1.3/web.browser/client.js"
+      ],
+      "meteor/reactive-dict": [
+        "/home/ilan/.meteor/packages/reactive-dict/1.3.2/web.browser/migration.js",
+        "/home/ilan/.meteor/packages/reactive-dict/1.3.2/web.browser/reactive-dict.js"
+      ],
+      "meteor/accounts-password": [
+        "/home/ilan/.meteor/packages/accounts-password/3.0.0/web.browser/password_client.js",
+        "/home/ilan/.meteor/packages/accounts-password/3.0.0/web.browser/email_templates.js",
+        "/home/ilan/.meteor/packages/accounts-password/3.0.0/web.browser/password_server.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}
