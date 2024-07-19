@@ -63,7 +63,7 @@ Template.mainContainer.helpers({
 
     getUser() {
         return getUser();
-    }
+    },
 
     isLoading() {
         const instance = Template.instance();

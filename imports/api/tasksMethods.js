@@ -9,7 +9,7 @@ Meteor.methods({
       throw new Meteor.Error('Not authorized.');
     }
  
-    TasksCollection.insert({
+    TasksCollection.insertAsync({
       text,
       createdAt: new Date,
       userId: this.userId,
@@ -29,10 +29,10 @@ Meteor.methods({
       throw new Meteor.Error('Access denied.');
     }
 
-    TasksCollection.remove(taskId);
+    TasksCollection.removeAsync(taskId);
   },
 
-  'tasks.setIsChecked'(taskId, isChecked) {
+  'tasks.setIsChecked': async(taskId, isChecked) {
     check(taskId, String);
     check(isChecked, Boolean);
 
@@ -40,7 +40,7 @@ Meteor.methods({
       throw new Meteor.Error('Not authorized.');
     }
 
-    const task = TasksCollection.findOne({ _id: taskId, userId: this.userId });
+    const task = await TasksCollection.findOneAsync({ _id: taskId, userId: this.userId });
 
     if (!task) {
       throw new Meteor.Error('Access denied.');
