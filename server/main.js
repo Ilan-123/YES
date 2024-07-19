@@ -1,9 +1,31 @@
 import { Meteor } from 'meteor/meteor';
-import { TasksCollection } from '/imports/api/TasksCollection';
+import { Accounts } from 'meteor/accounts-base';
+import { TasksCollection } from '/imports/db/TasksCollection';
+import '/imports/api/tasksMethods';
+import '/imports/api/tasksPublications';
 
-const insertTask = async taskText =>await TasksCollection.insertAsync({ text: taskText });
+const insertTask = (taskText, user) =>
+  TasksCollection.insert({
+    text: taskText,
+    userId: user._id,
+    createdAt: new Date(),
+  });
  
+const SEED_USERNAME = 'meteorite';
+const SEED_PASSWORD = 'password';
+
 Meteor.startup(async() => {
+  Accounts.removeDefaultRateLimit();
+ // console.log(await Accounts.findUserByUsername(SEED_USERNAME));
+  if (! await Accounts.findUserByUsername(SEED_USERNAME)) {
+    await Accounts.createUser({
+      username: SEED_USERNAME,
+      password: SEED_PASSWORD,
+    });
+  }
+
+  const user = await Accounts.findUserByUsername(SEED_USERNAME);
+  
   if (await TasksCollection.find().countAsync() === 0) {
     [
       'First Task',
@@ -12,7 +34,7 @@ Meteor.startup(async() => {
       'Fourth Task',
       'Fifth Task',
       'Sixth Task',
-      'Seventh Task'
-    ].forEach(insertTask)
+      'Seventh Task',
+    ].forEach(taskText => insertTask(taskText, user));
   }
 });
